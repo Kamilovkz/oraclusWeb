@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Manually add addresses
+{% endblock %}
+
+{% block content %}
+<h1>Add address</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.hash }}<br>
+        {{ form.sender }}<br>
+        {{ form.receiver }}<br>
+        {{ form.valueEth }}<br>
+        {{ form.confirmation }}<br>
+        {{ form.exchangeName }}<br>
+        <button type="submit" class="btn btn-success">ADD</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Main page</h1>
+    {% if cryptos %}
+    {% for el in cryptos %}
+        <div class="alert alert-warning mt-3">
+            <h3>{{ el.hash }}</h3>
+            <p>{{ el.sender }}</p>
+            <p>{{ el.receiver }}</p>
+            <p>{{ el.valueEth }}</p>
+            <p>{{ el.confirmation }}</p>
+            <p>{{ el.exchangeName }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>We do not have any addresses</p>
+{% endif %}
+{% endblock %}
