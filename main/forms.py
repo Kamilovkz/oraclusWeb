@@ -2,6 +2,7 @@ from dataclasses import fields
 
 from matplotlib import widgets
 from .models import Task
+from .models import ethSearch
 from django.forms import ModelForm, TextInput
 
 class TaskForm(ModelForm):
@@ -33,6 +34,4 @@ class TaskForm(ModelForm):
             'class': 'form-control',
             'placeholder': 'Enter exchangeName'
         }),
-        
-
-        }
+    }

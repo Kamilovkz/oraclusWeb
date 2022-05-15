@@ -16,3 +16,9 @@ class Task(models.Model):
     class Meta:
         verbose_name = "ethAddress"
         verbose_name_plural = "ethAddresses"
+
+class ethSearch(models.Model):
+    target = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.target

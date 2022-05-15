@@ -6,10 +6,12 @@ Eth API
 
 {% block content %}
 <h1>Eth Addresses</h1>
+    {% for info in all_info %}
     <b>Hash:</b> {{ info.hash }}<br>
     <b>sender:</b> {{ info.sender}}<br>
     <b>receiver:</b> {{ info.receiver }}<br>
     <b>valueEth:</b> {{ info.valueEth }}<br>
     <b>confirmation:</b> {{ info.confirmation }}<br>
+    {% endfor %}
 {% endblock %}
 
