@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Eth API
+{% endblock %}
+
+{% block content %}
+<h1>Eth Addresses</h1>
+    <b>Hash:</b> {{ info.hash }}<br>
+    <b>sender:</b> {{ info.sender}}<br>
+    <b>receiver:</b> {{ info.receiver }}<br>
+    <b>valueEth:</b> {{ info.valueEth }}<br>
+    <b>confirmation:</b> {{ info.confirmation }}<br>
+{% endblock %}
+
