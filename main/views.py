@@ -36,20 +36,30 @@ def api(request):
     url = 'https://api.etherscan.io/api?module=account&action=txlist&address={}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=' + keyApi 
     
     ethAddresses = ethSearch.objects.all()
+    print(ethAddresses)
 
     all_addresses = []
     for targetAddress in ethAddresses:
         res = requests.get(url.format(targetAddress)).json()
-        target_address = {
-            'hash': res["result"][0]["hash"],
-            'sender': res["result"][0]["from"],
-            'receiver': res["result"][0]["to"],
-            'valueEth': res["result"][0]["value"],
-            'confirmation': res["result"][0]["confirmations"]
-        }
-        all_addresses.append(target_address)
+        jsonTbl = res["result"]
+        i = 0
+        for result_item in jsonTbl:
+            item_dict = jsonTbl[i]
+            print("From: " + item_dict["from"])
+            i = i + 1
+            
+        
+        # target_address = {
+        #     'hash': res["result"][0]["hash"],
+        #     'sender': res["result"][0]["from"],
+        #     'receiver': res["result"][0]["to"],
+        #     'valueEth': res["result"][0]["value"],
+        #     'confirmation': res["result"][0]["confirmations"]
+        # }
+        # all_addresses.append(target_address)
 
     information = {'all_info': all_addresses}
+
 
 
 
