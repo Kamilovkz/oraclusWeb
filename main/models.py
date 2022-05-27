@@ -22,3 +22,9 @@ class ethSearch(models.Model):
 
     def __str__(self):
         return self.target
+
+class uniSearch(models.Model):
+    uniName = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.uniName
