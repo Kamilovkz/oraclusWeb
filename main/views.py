@@ -73,7 +73,7 @@ def uniswap(request):
     for targetAddress2 in uniAddresses:
         res = requests.get(url.format(targetAddress2)).json()
         jsonTbl2 = res["result"]
-        print(jsonTbl2)
+        # print(jsonTbl2)
         i = 0
         for result_item in jsonTbl2:
             item_dict2 = jsonTbl2[i]
